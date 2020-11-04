@@ -39,7 +39,7 @@ def copy_to_from_subarray(dst, subarray, point, subarray_mask=None, pivot='top_l
                 if d != 1:
                     raise ValueError('Subarray mask shape must be 1 in all but the first two dimensions.')
 
-    if len(point) is not 2:
+    if len(point) != 2:
         raise ValueError('Offset must be a 2D array index. However, length of offset was: {}'.format(len(point)))
 
     if point[0] < 0 or point[1] < 0:
@@ -50,7 +50,7 @@ def copy_to_from_subarray(dst, subarray, point, subarray_mask=None, pivot='top_l
 
     # (y1,y2) and (x1,x2) are the dimension intervals in the destination array, hence where to copy to
     # (sy1,sy2) and (sx1,sx2) are the dimension intervals in the subarray
-    if pivot is 'top_left':
+    if pivot == 'top_left':
         # offset will not be negative, hence can't run out of bounds in 'top_left' mode for start of interval
         y1 = point[0]
         # clip to max destination array size
@@ -67,7 +67,7 @@ def copy_to_from_subarray(dst, subarray, point, subarray_mask=None, pivot='top_l
         sy2 = np.minimum(s[0] - ((point[0] + s[0]) - d[0]), s[0])
         sx1 = 0
         sx2 = np.minimum(s[1] - ((point[1] + s[1]) - d[1]), s[1])
-    elif pivot is 'center':
+    elif pivot == 'center':
         if s[0] % 2 == 0 or s[1] % 2 == 0:
             raise ValueError('Case of uneven size of subarray not yet implemented. '
                              'There is no distinct center point of the image.')
@@ -112,7 +112,7 @@ def copy_to_if_nonzero(dst, src, mask_func=lambda x: x):
     """
     mask = mask_func(src) == 0
 
-    if len(mask.shape) is not 2:
+    if len(mask.shape) != 2:
         raise ValueError('Mask resulting from mask_func(src) must be two dimensional')
 
     if len(dst.shape) == 3:
@@ -272,5 +272,3 @@ def resample_2d_channelwise(arr: np.ndarray, locs: List[tuple], order=1):
         vals.append(resample_2d(sub_arr, locs, order=order))
 
     return sld(vals)
-
-

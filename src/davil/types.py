@@ -8,7 +8,7 @@ def is_tuple(thing):
 
 def is_iterable(thing):
     try:
-        thing_iterator = iter(thing)
+        iter(thing)
         return True
     except TypeError:
         return False
