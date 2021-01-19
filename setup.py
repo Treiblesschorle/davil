@@ -17,10 +17,10 @@ setuptools.setup(
         '': 'src',
     },
     install_requires=[
-        'numpy',
-        'scipy',
-        'sty',
-        'matplotlib'
+        'numpy==1.18.1',
+        'scipy==1.4.1',
+        'sty==1.0.0b12',
+        'matplotlib==3.1.3'
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
