@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="davil",
-    version="0.0.1",
+    version="0.0.2",
     author="David Kolb",
     author_email="david_kolb@t-online.de",
     description="Various Utils for no specific purpose.",

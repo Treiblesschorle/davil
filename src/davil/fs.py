@@ -1,7 +1,7 @@
 import os
 import re
 
-from src.davil.paths import check_slash, file_name
+from .paths import check_slash, file_name
 
 
 def list_image_files(directory, sort_function=None):

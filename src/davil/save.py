@@ -2,8 +2,8 @@ from abc import ABC, abstractmethod
 from typing import List
 import numpy as np
 
-from src.davil.paths import check_slash, check_extension_dot
-from src.davil.types import is_list
+from .paths import check_slash, check_extension_dot
+from .types import is_list
 
 
 class Saver(ABC):

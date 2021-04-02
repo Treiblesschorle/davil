@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 
-from src.davil.types import is_list
+from .types import is_list
 
 
 def plot_imgs(imgs, shape=None):

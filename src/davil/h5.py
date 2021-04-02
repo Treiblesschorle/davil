@@ -1,7 +1,7 @@
 import h5py
 import numpy as np
 
-from src.davil import log
+from . import log
 
 
 def groups(h5_file_path):
