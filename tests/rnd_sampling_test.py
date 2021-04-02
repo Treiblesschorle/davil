@@ -6,7 +6,7 @@ from src.davil.sampling import sample_index_multinominal
 class TestRandomIndexMultinominal(unittest.TestCase):
 
     def test(self):
-        epsilon = 300
+        epsilon = 500
         num_samples = 100000
 
         probs = [0.1, 0.3, 0.4, 0.2]
