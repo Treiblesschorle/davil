@@ -17,7 +17,7 @@ setuptools.setup(
         '': 'src',
     },
     install_requires=[
-        'numpy==1.18.1',
+        'numpy==1.22.0',
         'scipy==1.4.1',
         'sty==1.0.0b12',
         'matplotlib==3.1.3'
